@@ -62,6 +62,7 @@ apt install -y libzfs4linux zfs-initramfs zfs-zed zfsutils-linux
 4. Next, disable specific units to avoid conflicts:
 ```
 systemctl disable --now zfs-import-cache.service zfs-import.target zfs-mount.service zfs-share.service zfs-volume-wait.service zfs-volumes.target zfs.target zed.service systemd-binfmt.service zfs-volume-wait.service systemd-rfkill.socket
+systemctl mask systemd-udevd systemd-udevd-control.socket systemd-udevd-kernel.socket zfs-mount.service console-setup.service
 ```
 5. Add the following line to `/etc/rc.local` to load ZFS modules:
 ```
